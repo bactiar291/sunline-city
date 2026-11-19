@@ -1,12 +1,5 @@
-// A small seeded random number generator (mulberry32): the same seed gives the same game,
-// which is what makes the screenshot scenes repeatable.
-
-export function createRandom(seed) {
-  let a = seed | 0;
-  return function random() {
-    a = (a + 0x6d2b79f5) | 0;
-    let t = Math.imul(a ^ (a >>> 15), 1 | a);
-    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
-    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
-  };
-}
+export const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
+export const dist=(a,b)=>Math.hypot(a.x-b.x,a.y-b.y);
+export const lerp=(a,b,t)=>a+(b-a)*t;
+export const ang=(a,b)=>Math.atan2(b.y-a.y,b.x-a.x);
+export function seeded(n=1337){return()=>{n=(n*1664525+1013904223)>>>0;return n/4294967296;};}

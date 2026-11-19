@@ -1,61 +1,7 @@
-// Every tuning number and colour in one place. The playfield is a fixed 1280x720 logical area;
-// the renderer scales it to the window, so no rule below depends on the screen size.
-
-export const FIELD = { width: 1280, height: 720, groundY: 664 };
-
-/** The simulation's fixed step, in seconds: 60 updates a second whatever the display's rate. */
-export const STEP = 1 / 60;
-
-export const PLAYER = {
-  width: 72,
-  height: 24,
-  speed: 560,
-  invulnerable: 1.5,
-};
-
-export const LIVES = 3;
-
-export const BLOCK = {
-  minWidth: 40,
-  maxWidth: 110,
-  height: 36,
-  speed: 240,
-  speedPerLevel: 30,
-  speedJitter: 90,
-  interval: 0.55,
-  intervalScale: 0.88,
-  minInterval: 0.14,
-  dodgePoints: 1,
-};
-
-export const COIN = {
-  size: 24,
-  speed: 190,
-  speedPerLevel: 14,
-  interval: 1.4,
-  intervalJitter: 0.8,
-  points: 10,
-};
-
-/** Seconds of play per level, and the last level: speeds and spawn rates stop growing there. */
-export const LEVEL = { seconds: 12, max: 12 };
-
-/** How many falling things can exist at once; the pool is allocated once, at boot. */
-export const POOL_SIZE = 64;
-
-export const PALETTE = {
-  backdrop: '#11141b',
-  sky: '#1b1f2a',
-  ground: '#2a3040',
-  player: '#4fc3f7',
-  block: '#e5534b',
-  coin: '#f2c94c',
-  panel: '#252b38',
-  text: '#eef1f5',
-  muted: '#8b93a3',
-};
-
-export const FONT = 'system-ui, -apple-system, "Segoe UI", sans-serif';
-
-/** Where the best score is kept between visits (this browser only). */
-export const BEST_KEY = 'block-dodger.best';
+export const VIEW = { w: 1280, h: 720 };
+export const CITY = { w: 3600, h: 2400, block: 600, road: 150 };
+export const SAVE_KEY = 'sunline-city.save.v1';
+export const COLORS = { night:'#071522', asphalt:'#273443', road:'#1b2633', lane:'#f4bd53', sidewalk:'#506373', cyan:'#54e6d5', coral:'#ff6b64', gold:'#ffd166', ink:'#07131e', paper:'#eaf5f4', pink:'#ff4f9a' };
+export const VEHICLE_COLORS = ['#ef5c61','#f5b84a','#46c5cf','#f5f1df','#8e76e8','#49a96e','#e66da7'];
+export const BUILDING_COLORS = ['#264b63','#365b6d','#263e59','#514266','#635052','#305e60'];
+export const DT_MAX = .05;
